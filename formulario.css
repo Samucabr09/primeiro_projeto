@@ -1,6 +1,6 @@
 
 header {
-    background: mediumpurple;
+    background: #40E0D0;
     padding: 20px 0;
 }
 
@@ -47,4 +47,71 @@ header {
     font-weight: normal;
     margin: 5px 0;
 }
-	
+    
+.termos-sub{
+  font-weight: 600;
+  color:#333;
+}
+
+.enviar{
+    width: 40%;
+    padding: 15px 0;
+    background: lightblue;
+    color: darkblue;
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    /*transition: 5s background ;*/
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.enviar:hover{
+    background: deepskyblue;
+    transform: scale(1.02);
+}
+
+/*=========================================== PAG-CONFIRMACAO ================================================================================*/
+
+.confirmado {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 50px;
+    background-color: #fff;
+    border: 3px solid #6a0dad; /* borda roxa */
+}
+
+.check-icon {
+    font-size: 60px;
+    color: #2ecc71; /* verde */
+    border: 3px solid #2ecc71;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+h1 {
+    color: #222;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+a {
+    color: #222;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
