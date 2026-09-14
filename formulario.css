@@ -22,6 +22,11 @@ header {
     position: relative;
     right: 280px;
 }
+.ficha1{
+    text-align: center;
+}
+
+
 
 /* ÁREA DOS TEXTOS */
 .texto {
@@ -53,14 +58,20 @@ header {
   color:#333;
 }
 
+.opcoes label{
+    display: block;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
 .enviar{
     width: 40%;
     padding: 15px 0;
-    background: lightblue;
-    color: darkblue;
-    font-weight: bold;
+    background: white;
+    color: dark;
+    font-weight: black;
     font-size: 18px;
-    border: none;
+    border-color: black;
     border-radius: 10px;
     /*transition: 5s background ;*/
     transition: 1s all;
@@ -68,7 +79,7 @@ header {
 }
 
 .enviar:hover{
-    background: deepskyblue;
+    background: #C0C0C0;
     transform: scale(1.02);
 }
 

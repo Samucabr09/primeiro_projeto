@@ -66,7 +66,15 @@
        placeholder="000.000.000-00"><br><br>
 
     <label>Data de nascimento:</label>
-    <input type="date" name="nascimento" required><br><br>
+<input type="date" id="nascimento" name="nascimento" required><br><br>
+
+<script>
+  // Pega a data atual
+  const hoje = new Date().toISOString().split("T")[0];
+  // Define como limite máximo
+  document.getElementById("nascimento").setAttribute("max", hoje);
+</script>
+
 
     <label>Endereço:</label>
     <input type="text" name="endereco" required>
@@ -78,24 +86,18 @@
     <label>Município:</label>
     <input type="text" name="municipio" required>
     <label>UF:</label>
-    <input type="text" name="uf" maxlength="2" required 
-       pattern="[A-Z]{2}" 
-       placeholder="Ex: PR">
+    <input type="text" name="uf"  required 
+       value="PR" readonly>
 
-    <label>Telefone fixo:</label>
+    <label>Telefone para contato:</label>
     <input type="tel" name="telefone" required 
-       pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
-       placeholder="(xx) xxxxx-xxxx"><br><br>
+       pattern="\(\d{2}\)\d{4,5}-\d{4}" 
+       placeholder="(xx)xxxxx-xxxx"><br><br>
 
-    <label>Celular A:</label>
+    <label>Celular reserva:</label>
     <input type="tel" name="celularA" required 
-       pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
-       placeholder="(xx) xxxxx-xxxx">
-
-    <label>Celular B:</label>
-    <input type="tel" name="celularB" required 
-       pattern="\(\d{2}\)\s\d{4,5}-\d{4}" 
-       placeholder="(xx) xxxxx-xxxx"><br><br>
+       pattern="\(\d{2}\)\d{4,5}-\d{4}" 
+       placeholder="(xx)xxxxx-xxxx">
 
     <label>E-mail:</label>
     <input type="email" name="email" required
@@ -147,14 +149,14 @@
 
 <script>
 function validarTermos() {
-    // pega o valor do radio selecionado
+    
     const resposta = document.querySelector('input[name="pergunta"]:checked');
     
     if (!resposta || resposta.value !== "confirmar") {
         alert("Você precisa concordar com os termos para continuar.");
-        return false; // bloqueia o envio
+        return false; //envio n ok
     }
-    return true; // permite o envio
+    return true; //envio ok
 }
 </script>
 
