@@ -86,20 +86,28 @@
     <label>Município:</label>
     <input type="text" name="municipio" required>
     <label>UF:</label>
+    <input type="text" name="uf" maxlength="2"  required><br><br>
     <input type="text" name="uf"  required 
        value="PR" readonly>
 
+    <label>Telefone fixo:</label>
+    <input type="tel" name="telefone"  required><br><br>
     <label>Telefone para contato:</label>
     <input type="tel" name="telefone" required 
        pattern="\(\d{2}\)\d{4,5}-\d{4}" 
        placeholder="(xx)xxxxx-xxxx"><br><br>
 
+    <label>Celular A:</label>
+    <input type="tel" name="celularA" required>
+    <label>Celular B:</label>
+    <input type="tel" name="celularB" required><br><br>
     <label>Celular reserva:</label>
     <input type="tel" name="celularA" required 
        pattern="\(\d{2}\)\d{4,5}-\d{4}" 
        placeholder="(xx)xxxxx-xxxx">
 
     <label>E-mail:</label>
+    <input type="email" name="email" required><br><br>
     <input type="email" name="email" required
        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
        placeholder="exemplo@dominio.com">
@@ -161,7 +169,7 @@
 
     </lu>
 
-    <input type="submit" value="Enviar Formulario" class="enviar">
+
 </form>
 
 <script>
@@ -178,6 +186,9 @@ function validarTermos() {
 </script>
 
 <br>
+
+
+<input type="submit" value="Enviar Formulario" class="enviar">
 
 <footer>
     <p class="Copyright">&copy;Copyright Leonardo da Vinci</p>
