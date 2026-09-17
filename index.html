@@ -154,7 +154,7 @@
     	
     </lu><br>
 
-    <a herf="https://samucabr09.github.io/primeiro_projeto/pag-confirmcao.html" > <input type="submit" value="Enviar Formulario" class="enviar"></a>
+     <input type="submit" onclick="validarTermos()" value="Enviar Formulario" class="enviar">
 
    
 </form>
@@ -168,6 +168,7 @@ function validarTermos() {
         alert("Você precisa concordar com os termos para continuar.");
         return false; //envio n ok
     }
+      window.location.href="pag-confirmcao.html";
     return true; //envio ok
 }
 </script>
