@@ -11,8 +11,9 @@
 
     <link rel="stylesheet" href="formulario.css">
 
-    <link rel="shortcut icon" type="image/ico"
-        href="imagens/civicomilitar.png">
+    <link rel="shortcut icon"
+          type="image/ico"
+          href="imagens/civicomilitar.png">
 </head>
 
 <body>
@@ -21,11 +22,9 @@
 
     <div class="caixa">
 
-        <!-- LOGO -->
         <img src="imagens/logo.png"
-            alt="Logo Escola Cívico Militar Leonardo Da Vinci">
+             alt="Logo Escola Cívico Militar Leonardo Da Vinci">
 
-        <!-- TEXTOS -->
         <div class="texto">
 
             <h1>COLÉGIO ESTADUAL LEONARDO DA VINCI</h1>
@@ -52,314 +51,591 @@
 </header>
 
 
-<h2 class="ficha1">I - FICHA DE INSCRIÇÃO</h2>
+<main class="form-container">
+
+    <h2 class="ficha1">
+        I - FICHA DE INSCRIÇÃO
+    </h2>
 
 
-<!-- FORMULÁRIO -->
-<form
-    class="formulario"
-    action="pag-confirmacao.html"
-    method="get"
-    onsubmit="return validarTermos()"
->
-
-    <label>Nome:</label>
-    <input type="text" name="nome" required>
-
-    <br><br>
-
-
-    <label>RG:</label>
-    <input
-        type="text"
-        name="rg"
-        required
-        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-        placeholder="000.000.000-00"
+    <form
+        class="formulario"
+        action="pag-confirmacao.html"
+        method="get"
+        onsubmit="return validarTermos()"
     >
 
 
-    <label>Expedido por:</label>
-    <input type="text" name="orgao" required>
+        <!-- DADOS PESSOAIS -->
+
+        <section class="card">
+
+            <h2>Dados pessoais</h2>
+
+            <p class="descricao">
+                Preencha seus dados pessoais abaixo.
+            </p>
 
 
-    <label>CPF:</label>
-    <input
-        type="text"
-        name="cpf"
-        required
-        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
-        placeholder="000.000.000-00"
-    >
+            <div class="linha">
 
-    <br><br>
+                <div class="campo campo-grande">
 
+                    <label for="nome">
+                        Nome completo
+                    </label>
 
-    <label>Data de nascimento:</label>
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        required
+                    >
 
-    <input
-        type="date"
-        id="nascimento"
-        name="nascimento"
-        required
-    >
-
-    <br><br>
+                </div>
 
 
-    <label>Endereço:</label>
-    <input type="text" name="endereco" required>
+                <div class="campo">
+
+                    <label for="nascimento">
+                        Data de nascimento
+                    </label>
+
+                    <input
+                        type="date"
+                        id="nascimento"
+                        name="nascimento"
+                        required
+                    >
+
+                </div>
+
+            </div>
 
 
-    <label>N°:</label>
-    <input type="text" name="numero" required>
+            <div class="linha">
 
-    <br><br>
+                <div class="campo">
 
+                    <label for="rg">
+                        RG
+                    </label>
 
-    <label>Bairro:</label>
-    <input type="text" name="bairro" required>
+                    <input
+                        type="text"
+                        id="rg"
+                        name="rg"
+                        required
+                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                        placeholder="000.000.000-00"
+                    >
 
-
-    <label>Município:</label>
-    <input type="text" name="municipio" required>
-
-
-    <label>UF:</label>
-
-    <input
-        type="text"
-        name="uf"
-        maxlength="2"
-        value="PR"
-        readonly
-        required
-    >
+                </div>
 
 
-    <label>Telefone fixo:</label>
+                <div class="campo">
 
-    <input
-        type="tel"
-        name="telefone_fixo"
-        required
-        pattern="\(\d{2}\)\d{4,5}-\d{4}"
-        placeholder="(xx)xxxxx-xxxx"
-    >
+                    <label for="orgao">
+                        Expedido por
+                    </label>
 
-    <br><br>
+                    <input
+                        type="text"
+                        id="orgao"
+                        name="orgao"
+                        required
+                    >
 
-
-    <label>Telefone para contato:</label>
-
-    <input
-        type="tel"
-        name="telefone_contato"
-        required
-        pattern="\(\d{2}\)\d{4,5}-\d{4}"
-        placeholder="(xx)xxxxx-xxxx"
-    >
-
-    <br><br>
+                </div>
 
 
-    <label>E-mail:</label>
+                <div class="campo">
 
-    <input
-        type="email"
-        name="email"
-        required
-        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-        placeholder="exemplo@dominio.com"
-    >
+                    <label for="cpf">
+                        CPF
+                    </label>
 
-    <br><br>
+                    <input
+                        type="text"
+                        id="cpf"
+                        name="cpf"
+                        required
+                        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+                        placeholder="000.000.000-00"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
 
 
-    <h2>CURSO PRETENDIDO:</h2>
+        <!-- ENDEREÇO -->
 
-    <div class="opcoes">
+        <section class="card">
 
-        <label>
+            <h2>Endereço</h2>
+
+            <div class="linha">
+
+                <div class="campo campo-grande">
+
+                    <label for="endereco">
+                        Endereço
+                    </label>
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        name="endereco"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="numero">
+                        Número
+                    </label>
+
+                    <input
+                        type="text"
+                        id="numero"
+                        name="numero"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="linha">
+
+                <div class="campo">
+
+                    <label for="bairro">
+                        Bairro
+                    </label>
+
+                    <input
+                        type="text"
+                        id="bairro"
+                        name="bairro"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo campo-grande">
+
+                    <label for="municipio">
+                        Município
+                    </label>
+
+                    <input
+                        type="text"
+                        id="municipio"
+                        name="municipio"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="uf">
+                        UF
+                    </label>
+
+                    <input
+                        type="text"
+                        id="uf"
+                        name="uf"
+                        maxlength="2"
+                        value="PR"
+                        readonly
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTATO -->
+
+        <section class="card">
+
+            <h2>Contato</h2>
+
+            <div class="linha">
+
+                <div class="campo">
+
+                    <label for="telefone_fixo">
+                        Telefone fixo
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone_fixo"
+                        name="telefone_fixo"
+                        required
+                        pattern="\(\d{2}\)\d{4,5}-\d{4}"
+                        placeholder="(46) 3536-2334"
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="telefone_contato">
+                        Telefone para contato
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone_contato"
+                        name="telefone_contato"
+                        required
+                        pattern="\(\d{2}\)\d{4,5}-\d{4}"
+                        placeholder="(46) 99999-9999"
+                    >
+
+                </div>
+
+
+                <div class="campo campo-grande">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="exemplo@dominio.com"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CURSO -->
+
+        <section class="card">
+
+            <h2>Curso pretendido</h2>
+
+            <p class="descricao">
+                Selecione o curso que deseja realizar.
+            </p>
+
+
+            <div class="opcoes">
+
+                <label class="opcao">
+
+                    <input
+                        type="radio"
+                        name="curso"
+                        value="TI"
+                        checked
+                    >
+
+                    <span>
+                        <strong>
+                            Técnico em Desenvolvimento de Sistemas
+                        </strong>
+
+                        <br>
+
+                        Integrado ao Ensino Médio –
+                        Turno da Manhã
+                    </span>
+
+                </label>
+
+
+                <label class="opcao">
+
+                    <input
+                        type="radio"
+                        name="curso"
+                        value="Formacao"
+                    >
+
+                    <span>
+
+                        <strong>
+                            Formação de Docentes
+                        </strong>
+
+                        <br>
+
+                        Integrado ao Ensino Médio –
+                        Turno da Manhã
+
+                    </span>
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- HISTÓRICO ESCOLAR -->
+
+        <section class="card">
+
+            <h2>Histórico Escolar</h2>
+
+            <p class="descricao">
+                Selecione seu histórico escolar.
+            </p>
+
+
+            <div class="upload-area">
+
+                <label for="historico">
+
+                    Selecionar imagem do Histórico Escolar
+
+                </label>
+
+                <input
+                    type="file"
+                    id="historico"
+                    name="historico"
+                    accept="image/*"
+                >
+
+                <p id="nome-arquivo">
+                    Nenhum arquivo selecionado
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- DOCUMENTOS -->
+
+        <section class="card">
+
+            <h2>Documentos necessários</h2>
+
+            <ul class="documentos">
+
+                <li>
+                    Histórico escolar até o 8º ano e boletim do 9º ano;
+                </li>
+
+                <li>
+                    Original e fotocópia da Certidão de Nascimento;
+                </li>
+
+                <li>
+                    RG e CPF;
+                </li>
+
+                <li>
+                    Conta de luz de outubro ou novembro (COPEL)
+                    ou água (SANEPAR);
+                </li>
+
+                <li>
+                    Declaração de Vacinação
+                    (emitida pelo Posto de Saúde);
+                </li>
+
+                <li>
+                    Número do Cartão NIS
+                    (se tiver Auxílio Brasil);
+                </li>
+
+                <li>
+                    RG e CPF do(a) responsável.
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- TERMOS -->
+
+        <section class="card">
+
+            <h2>Declaração</h2>
+
+            <p class="termos">
+
+                Declaro serem verdadeiras as informações acima e estar
+                ciente de que, em caso de classificação para o curso
+                pretendido, a não comprovação das aulas nos primeiros
+                05 (cinco) dias após o início da inscrição acarretará
+                exclusão automática da matrícula.
+
+                <br><br>
+
+                Declaro ainda estar ciente de que, em caso de desistência
+                no desenvolvimento do curso, a situação será registrada
+                conforme as regras do processo.
+
+                <br><br>
+
+                Declaro ainda que estou ciente da documentação solicitada
+                para o processo seletivo de ingresso no curso pretendido.
+
+            </p>
+
+
+            <div class="declaro">
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="pergunta"
+                        value="confirmar"
+                        required
+                    >
+
+                    SIM, li e estou de acordo com os termos
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="pergunta"
+                        value="negar"
+                    >
+
+                    NÃO, li e não estou de acordo com os termos
+
+                </label>
+
+            </div>
+
+        </section>
+
+
+        <!-- BOTÃO -->
+
+        <div class="area-enviar">
+
             <input
-                type="radio"
-                name="curso"
-                value="TI"
-                checked
+                type="submit"
+                value="Enviar Formulário"
+                class="enviar"
             >
 
-            Técnico em Desenvolvimento de Sistemas
-            (Integrado ao Ensino Médio) – Turno da Manhã
-        </label>
-
-        <br>
-
-        <label>
-            <input
-                type="radio"
-                name="curso"
-                value="Formacao"
-            >
-
-            Formação de Docentes
-            (Integrado ao Ensino Médio) – Turno da Manhã
-        </label>
-
-        <br>
-
-    </div>
+        </div>
 
 
-    <p class="termos">
+    </form>
 
-        Declaro/verdadeiro as informações acima e estar ciente que,
-        em caso de classificação para o curso pretendido, a não
-        comprovação das aulas nos primeiros (05) dias após o início
-        da inscrição acarretará exclusão automática da matrícula.
-
-        <br><br>
-
-        Declaro ainda estar ciente de que, em caso de desistência
-        no desenvolvimento do curso, a situação será registrada
-        conforme regras do processo.
-
-        <br><br>
-
-        Obrigado/declaro.
-
-        <br>
-
-        <span class="termos-sub">
-
-            Declaro ainda que estou ciente da documentação solicitada
-            para o processo seletivo de ingresso no curso pretendido.
-
-        </span>
-
-    </p>
-
-
-    <!-- CONFIRMAÇÃO DOS TERMOS -->
-
-    <div class="declaro">
-
-        <label>
-
-            <input
-                type="radio"
-                name="pergunta"
-                value="confirmar"
-                required
-            >
-
-            SIM, li e estou de acordo com os termos
-
-        </label>
-
-        <br>
-
-
-        <label>
-
-            <input
-                type="radio"
-                name="pergunta"
-                value="negar"
-            >
-
-            NÃO, li e não estou de acordo com os termos
-
-        </label>
-
-    </div>
-
-    <br>
-
-
-    <!-- DOCUMENTOS -->
-
-    <h2>Documentos necessários:</h2>
-
-    <ul>
-
-        <li>Histórico escolar até o 8º ano e boletim do 9º ano;</li>
-
-        <li>
-            Original e Fotocópia da Certidão de Nascimento;
-        </li>
-
-        <li>RG e CPF;</li>
-
-        <li>
-            Conta de luz de outubro ou novembro (COPEL)
-            ou água (SANEPAR);
-        </li>
-
-        <li>
-            Declaração de Vacinação (emitida pelo Posto de Saúde);
-        </li>
-
-        <li>
-            Número do Cartão NIS (se tiver Auxílio Brasil);
-        </li>
-
-        <li>RG e CPF do(a) responsável.</li>
-
-    </ul>
-
-    <br>
-
-
-    <!-- BOTÃO -->
-
-    <input
-        type="submit"
-        value="Enviar Formulário"
-        class="enviar"
-    >
-
-</form>
-
-
-<!-- VALIDAÇÃO -->
-
-<script>
-
-function validarTermos() {
-
-    const resposta = document.querySelector(
-        'input[name="pergunta"]:checked'
-    );
-
-    // Verifica se o usuário escolheu SIM
-    if (!resposta || resposta.value !== "confirmar") {
-
-        alert(
-            "Você precisa concordar com os termos para continuar."
-        );
-
-        return false;
-    }
-
-    // Retorna true.
-    // O formulário será enviado normalmente
-    // para pag-confirmacao.html
-    return true;
-}
-
-</script>
-
-
-<br>
+</main>
 
 
 <footer>
 
     <p class="Copyright">
-        &copy;Copyright Leonardo da Vinci
+        &copy; Copyright Leonardo da Vinci
     </p>
 
 </footer>
+
+
+<script>
+
+    // Impede que seja escolhida uma data de nascimento futura
+
+    const hoje = new Date()
+        .toISOString()
+        .split("T")[0];
+
+    document
+        .getElementById("nascimento")
+        .setAttribute("max", hoje);
+
+
+    // Mostra o nome da imagem selecionada
+
+    const historico =
+        document.getElementById("historico");
+
+    const nomeArquivo =
+        document.getElementById("nome-arquivo");
+
+
+    historico.addEventListener("change", function () {
+
+        if (this.files.length > 0) {
+
+            nomeArquivo.textContent =
+                "Arquivo selecionado: " +
+                this.files[0].name;
+
+        } else {
+
+            nomeArquivo.textContent =
+                "Nenhum arquivo selecionado";
+
+        }
+
+    });
+
+
+    // Validação dos termos
+
+    function validarTermos() {
+
+        const resposta =
+            document.querySelector(
+                'input[name="pergunta"]:checked'
+            );
+
+
+        if (
+            !resposta ||
+            resposta.value !== "confirmar"
+        ) {
+
+            alert(
+                "Você precisa concordar com os termos para continuar."
+            );
+
+            return false;
+
+        }
+
+
+        return true;
+
+    }
+
+</script>
+
 
 </body>
 
