@@ -4,13 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  <base href="/primeiro_projeto/">
+
+    <base href="/primeiro_projeto/">
+
     <title>Escola Cívico Militar Leonardo Da Vinci</title>
 
     <link rel="stylesheet" href="formulario.css">
 
-    <link rel="shortcut icon" type="image/ico" 
-          href="imagens/civicomilitar.png">
+    <link rel="shortcut icon" type="image/ico"
+        href="imagens/civicomilitar.png">
 </head>
 
 <body>
@@ -20,8 +22,8 @@
     <div class="caixa">
 
         <!-- LOGO -->
-        <img src="imagens/logo.png" 
-             alt="Logo Escola Cívico Militar Leonardo Da Vinci">
+        <img src="imagens/logo.png"
+            alt="Logo Escola Cívico Militar Leonardo Da Vinci">
 
         <!-- TEXTOS -->
         <div class="texto">
@@ -39,147 +41,326 @@
                 E-mail: dvzleonardodavinci@seed.pr.gov.br
             </h3>
 
-            <h2 class="h22">CEP 85.660-000 DOIS VIZINHOS PARANÁ</h2>
+            <h2 class="h22">
+                CEP 85.660-000 DOIS VIZINHOS PARANÁ
+            </h2>
 
         </div>
 
     </div>
 
 </header>
+
+
 <h2 class="ficha1">I - FICHA DE INSCRIÇÃO</h2>
 
 
-<form class="formulario" action="pag-confirmacao.html" method="get" onsubmit="return validarTermos()">
+<!-- FORMULÁRIO -->
+<form
+    class="formulario"
+    action="pag-confirmacao.html"
+    method="get"
+    onsubmit="return validarTermos()"
+>
+
     <label>Nome:</label>
-    <input type="text" name="nome" required><br><br>
+    <input type="text" name="nome" required>
+
+    <br><br>
+
 
     <label>RG:</label>
-    <input type="text" name="rg" required 
-       pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-       placeholder="000.000.000-00">
+    <input
+        type="text"
+        name="rg"
+        required
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+        placeholder="000.000.000-00"
+    >
+
 
     <label>Expedido por:</label>
     <input type="text" name="orgao" required>
+
+
     <label>CPF:</label>
-    <input type="text" name="cpf" required 
-       pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-       placeholder="000.000.000-00"><br><br>
+    <input
+        type="text"
+        name="cpf"
+        required
+        pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"
+        placeholder="000.000.000-00"
+    >
+
+    <br><br>
+
 
     <label>Data de nascimento:</label>
-<input type="date" id="nascimento" name="nascimento" required><br><br>
 
-<script>
-  // Pega a data atual
-  const hoje = new Date().toISOString().split("T")[0];
-  // Define como limite máximo
-  document.getElementById("nascimento").setAttribute("max", hoje);
-</script>
+    <input
+        type="date"
+        id="nascimento"
+        name="nascimento"
+        required
+    >
+
+    <br><br>
 
 
     <label>Endereço:</label>
     <input type="text" name="endereco" required>
+
+
     <label>N°:</label>
-    <input type="text" name="numero" required><br><br>
+    <input type="text" name="numero" required>
+
+    <br><br>
+
 
     <label>Bairro:</label>
     <input type="text" name="bairro" required>
+
+
     <label>Município:</label>
     <input type="text" name="municipio" required>
+
+
     <label>UF:</label>
 
-   <input type="text" name="uf" maxlength="2" value="PR" readonly required>
+    <input
+        type="text"
+        name="uf"
+        maxlength="2"
+        value="PR"
+        readonly
+        required
+    >
+
 
     <label>Telefone fixo:</label>
-    <input type="tel" name="telefone"  required
-    pattern="\(\d{2}\)\d{4,5}-\d{4}" 
-       placeholder="(xx)xxxxx-xxxx"><br><br>
+
+    <input
+        type="tel"
+        name="telefone_fixo"
+        required
+        pattern="\(\d{2}\)\d{4,5}-\d{4}"
+        placeholder="(xx)xxxxx-xxxx"
+    >
+
+    <br><br>
+
+
     <label>Telefone para contato:</label>
-    <input type="tel" name="telefone" required 
-       pattern="\(\d{2}\)\d{4,5}-\d{4}" 
-       placeholder="(xx)xxxxx-xxxx"><br><br>
+
+    <input
+        type="tel"
+        name="telefone_contato"
+        required
+        pattern="\(\d{2}\)\d{4,5}-\d{4}"
+        placeholder="(xx)xxxxx-xxxx"
+    >
+
+    <br><br>
+
 
     <label>E-mail:</label>
-        <input type="email" name="email" required
+
+    <input
+        type="email"
+        name="email"
+        required
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-         placeholder="exemplo@dominio.com">  <br><br>
+        placeholder="exemplo@dominio.com"
+    >
+
+    <br><br>
+
 
     <h2>CURSO PRETENDIDO:</h2>
+
     <div class="opcoes">
+
         <label>
-            <input type="radio" name="curso" value="TI" checked>
-            Técnico em Desenvolvimento de Sistemas (Integrado ao Ensino Médio) – Turno da Manhã
-        </label><br>
+            <input
+                type="radio"
+                name="curso"
+                value="TI"
+                checked
+            >
+
+            Técnico em Desenvolvimento de Sistemas
+            (Integrado ao Ensino Médio) – Turno da Manhã
+        </label>
+
+        <br>
+
         <label>
-            <input type="radio" name="curso" value="Formacao">
-            Formação de Docentes (Integrado ao Ensino Médio) – Turno da Manhã
-        </label><br>
+            <input
+                type="radio"
+                name="curso"
+                value="Formacao"
+            >
+
+            Formação de Docentes
+            (Integrado ao Ensino Médio) – Turno da Manhã
+        </label>
+
+        <br>
+
     </div>
+
 
     <p class="termos">
-    Declaro/verdadars as informações acima e estar ciente que, em caso de classificação
-    para o curso pretendido, a não comprovação das aulas nos primeiros (05) dias após
-    o início da inscrição acarretará exclusão automática da matrícula.
-    <br /><br />
-    Declaro ainda estar ciente de que, em caso de desistência no desenvolvimento do curso,
-    a situação será registrada conforme regras do processo.
-    <br /><br />
-    Obrigado/declaro.
-    <br />
-    <span class="termos-sub">
-      Declaro ainda que estou ciente da documentação solicitada para o processo seletivo
-      de ingresso no curso pretendido.
-    </span>
+
+        Declaro/verdadeiro as informações acima e estar ciente que,
+        em caso de classificação para o curso pretendido, a não
+        comprovação das aulas nos primeiros (05) dias após o início
+        da inscrição acarretará exclusão automática da matrícula.
+
+        <br><br>
+
+        Declaro ainda estar ciente de que, em caso de desistência
+        no desenvolvimento do curso, a situação será registrada
+        conforme regras do processo.
+
+        <br><br>
+
+        Obrigado/declaro.
+
+        <br>
+
+        <span class="termos-sub">
+
+            Declaro ainda que estou ciente da documentação solicitada
+            para o processo seletivo de ingresso no curso pretendido.
+
+        </span>
+
     </p>
 
+
+    <!-- CONFIRMAÇÃO DOS TERMOS -->
+
     <div class="declaro">
+
         <label>
-            <input type="radio" name="pergunta" value="confirmar">
+
+            <input
+                type="radio"
+                name="pergunta"
+                value="confirmar"
+                required
+            >
+
             SIM, li e estou de acordo com os termos
-        </label><br>
-        <label>
-            <input type="radio" name="pergunta" value="negar">
-            NÃO, li e não estou de acordo com os termos
+
         </label>
+
+        <br>
+
+
+        <label>
+
+            <input
+                type="radio"
+                name="pergunta"
+                value="negar"
+            >
+
+            NÃO, li e não estou de acordo com os termos
+
+        </label>
+
     </div>
+
     <br>
-     <h2>Documentos necessários:</h2>
-    <lu>
-    	<li>. Hístorico escolar até o 8º ano e boletim do 9º ano;</li>
-    	<li>. Original e Fotocópia da Certidão de Nascimento;</li>
-    	<li>. RG e CPF;</li>
-    	<li>. Conta de luz de outubro ou novembro (COPEL) ou água (SANEPAR);</li>
-    	<li>. Declaração de Vacinação (emitida pelo Posto de Saúde);</li>
-    	<li>. Número do Cartão NIS (se tiver Auxílio Brasil);</li>
-    	<li>. RG e CPF do(a) responsável.</li>
-    	
-    </lu><br>
 
-     <input type="submit" onclick="validarTermos()" value="Enviar Formulario" class="enviar">
 
-   
+    <!-- DOCUMENTOS -->
+
+    <h2>Documentos necessários:</h2>
+
+    <ul>
+
+        <li>Histórico escolar até o 8º ano e boletim do 9º ano;</li>
+
+        <li>
+            Original e Fotocópia da Certidão de Nascimento;
+        </li>
+
+        <li>RG e CPF;</li>
+
+        <li>
+            Conta de luz de outubro ou novembro (COPEL)
+            ou água (SANEPAR);
+        </li>
+
+        <li>
+            Declaração de Vacinação (emitida pelo Posto de Saúde);
+        </li>
+
+        <li>
+            Número do Cartão NIS (se tiver Auxílio Brasil);
+        </li>
+
+        <li>RG e CPF do(a) responsável.</li>
+
+    </ul>
+
+    <br>
+
+
+    <!-- BOTÃO -->
+
+    <input
+        type="submit"
+        value="Enviar Formulário"
+        class="enviar"
+    >
+
 </form>
 
+
+<!-- VALIDAÇÃO -->
+
 <script>
+
 function validarTermos() {
-    
-    const resposta = document.querySelector('input[name="pergunta"]:checked');
-    
+
+    const resposta = document.querySelector(
+        'input[name="pergunta"]:checked'
+    );
+
+    // Verifica se o usuário escolheu SIM
     if (!resposta || resposta.value !== "confirmar") {
-        alert("Você precisa concordar com os termos para continuar.");
-        return false; //envio n ok
+
+        alert(
+            "Você precisa concordar com os termos para continuar."
+        );
+
+        return false;
     }
-      window.location.href="https://samucabr09.github.io/primeiro_projeto/pag-confirmcao.html";
-    return true; //envio ok
+
+    // Retorna true.
+    // O formulário será enviado normalmente
+    // para pag-confirmacao.html
+    return true;
 }
+
 </script>
+
 
 <br>
 
 
-
 <footer>
-    <p class="Copyright">&copy;Copyright Leonardo da Vinci</p>
+
+    <p class="Copyright">
+        &copy;Copyright Leonardo da Vinci
+    </p>
+
 </footer>
 
 </body>
+
 </html>
