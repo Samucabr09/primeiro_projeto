@@ -55,6 +55,7 @@
 
 
     <form class="formulario" action="pag-confirmacao.html" method="get" onsubmit="return validarTermos()">
+<!-- onsubmit chama função JS validarTermos(); se retornar false, bloqueia envio -->
 
 
         <!-- =====================================================DADOS PESSOAIS====================================================== -->
@@ -103,6 +104,7 @@
                     </label>
 
                     <input type="text" id="rg" name="rg" required pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+                    <!-- O pattern = regra: obriga o usuário a digitar no formato certo (ex.: RG como 000.000.000-00) -->
 
                 </div>
 
@@ -197,6 +199,7 @@
                     </label>
 
                     <input type="text" id="uf" name="uf" value="PR" readonly>
+                    <!-- readonly valor fixo -->
 
                 </div>
 
@@ -243,6 +246,7 @@
                     </label>
 
                     <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+                    <!-- type="email" precisa que tenha nome antes do @, que tenha o @ e um dominio dps, como teste@gmail.com -->
 
                 </div>
 
@@ -267,6 +271,7 @@
                 <label class="opcao">
 
                     <input type="radio" name="curso" value="TI" checked>
+                     <!-- checked: já vem marcado por padrão -->
 
                     <span>
                         <strong>
@@ -334,6 +339,8 @@
                     </label>
 
                     <input type="file" id="historico" name="historico" accept="image/*" required>
+                    <!-- type= file: um botão para o usuário escolher um arquivo-->
+    <!--accept="image/*": aceitos qualquer tipo de imagens -->
 
                     <p id="nome-historico">
                         Nenhum arquivo selecionado
@@ -541,6 +548,7 @@
                 <label>
 
                     <input type="radio" name="pergunta" value="confirmar" required>
+                      <!-- Radio obrigatório: precisa marcar sim para deixar enviar -->
 
                     SIM, li e estou de acordo com os termos
 
@@ -550,6 +558,7 @@
                 <label>
 
                     <input type="radio" name="pergunta" value="negar">
+                     <!-- Se marcar NÃO, bloqueia envio -->
 
                     NÃO, li e não estou de acordo com os termos
 
@@ -565,6 +574,7 @@
         <div class="area-enviar">
 
             <input type="submit" value="Enviar Formulário" class="enviar">
+               <!-- Botão que envia; só funciona se retornar true -->
 
         </div>
 
@@ -610,18 +620,24 @@
 
 
     documentos.forEach(function (documento) {
-
+ // cada item da const executa todo o codigo dentro das {}
         const input = document.getElementById(documento[0]);
+        //pega o primeiro id da const documentos
         const nomeArquivo = document.getElementById(documento[1]);
+           //pega o primeiro <span> ou <p> da cosnt
 
 
         input.addEventListener("change", function () {
+            //addEventListener("change"): quando o usuário mudar o valor desse campo, execute este código
+            //change = mudança
 
             if (this.files.length > 0) {
+                 //Verifica se o usuário realmente escolheu algum arquivo.
 
                 nomeArquivo.textContent =
                     "Arquivo selecionado: " +
                     this.files[0].name;
+                    //pega o aquivo mostra o nome dele
 
             } else {
 
@@ -643,11 +659,15 @@
             document.querySelector(
                 'input[name="pergunta"]:checked'
             );
+             // vai procurar no meu radio se foi marcado sim ou nao, caso n foi marcado nd aparece o alert
+
 
 
         if (
             !resposta ||
+            //marcou nd
             resposta.value !== "confirmar"
+            // marcou nao em vez de sim
         ) {
 
             alert(
