@@ -176,21 +176,206 @@
 
     <!-- =====================================================DOCUMENTOS====================================================== -->
 
-    <section class="card">
-        <h2>Documentos</h2>
-        <p class="descricao">Selecione os documentos necessários para a inscrição.</p>
+     <section class="card">
 
-        <!-- Exemplo: todos são type="file" com accept="image/*" -->
-        <input type="file" id="historico" name="historico" accept="image/*" required> <!-- Upload obrigatório -->
-        <input type="file" id="certidao" name="certidao" accept="image/*" required>
-        <input type="file" id="rg_cpf" name="rg_cpf" accept="image/*" required>
-        <input type="file" id="residencia" name="residencia" accept="image/*" required>
-        <input type="file" id="vacinacao" name="vacinacao" accept="image/*" required>
-        <input type="file" id="nis" name="nis" accept="image/*"> <!-- opcional -->
-        <input type="file" id="responsavel" name="responsavel" accept="image/*" required>
-    </section>
-    <!-- type= file: um botão para o usuário escolher um arquivo-->
-    <!--accept="image/*": aceita qualquer tipo de imagens -->
+            <h2>Documentos</h2>
+
+            <p class="descricao">
+                Selecione os documentos necessários para a inscrição.
+            </p>
+
+
+            <!-- HISTÓRICO ESCOLAR -->
+
+            <div class="documento-upload">
+
+                <h3>Histórico Escolar</h3>
+
+                <p>
+                    Selecione uma imagem do histórico escolar.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="historico">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="historico" name="historico" accept="image/*" required>
+
+                    <p id="nome-historico">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CERTIDÃO DE NASCIMENTO -->
+
+            <div class="documento-upload">
+
+                <h3>Certidão de Nascimento</h3>
+
+                <p>
+                    Selecione uma imagem da certidão de nascimento.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="certidao">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="certidao" name="certidao" accept="image/*" required>
+
+                    <p id="nome-certidao">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RG E CPF -->
+
+            <div class="documento-upload">
+
+                <h3>RG e CPF</h3>
+
+                <p>
+                    Selecione uma imagem do RG e do CPF.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="rg_cpf">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="rg_cpf" name="rg_cpf" accept="image/*" required>
+
+                    <p id="nome-rg-cpf">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPROVANTE DE RESIDÊNCIA -->
+
+            <div class="documento-upload">
+
+                <h3>Comprovante de Residência</h3>
+
+                <p>
+                    Selecione uma imagem da conta de luz ou água.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="residencia">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="residencia" name="residencia" accept="image/*" required>
+
+                    <p id="nome-residencia">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DECLARAÇÃO DE VACINAÇÃO -->
+
+            <div class="documento-upload">
+
+                <h3>Declaração de Vacinação</h3>
+
+                <p>
+                    Selecione uma imagem da declaração de vacinação.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="vacinacao">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="vacinacao" name="vacinacao" accept="image/*" required>
+
+                    <p id="nome-vacinacao">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CARTÃO NIS -->
+
+            <div class="documento-upload">
+
+                <h3>Cartão NIS</h3>
+
+                <p>
+                    Se possuir Auxílio Brasil, selecione uma imagem do Cartão NIS.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="nis">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="nis" name="nis" accept="image/*">
+
+                    <p id="nome-nis">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DOCUMENTOS DO RESPONSÁVEL -->
+
+            <div class="documento-upload">
+
+                <h3>RG e CPF do Responsável</h3>
+
+                <p>
+                    Selecione uma imagem contendo o RG e o CPF do responsável.
+                </p>
+
+                <div class="upload-area">
+
+                    <label for="responsavel">
+                        Selecionar imagem
+                    </label>
+
+                    <input type="file" id="responsavel" name="responsavel" accept="image/*" required>
+
+                    <p id="nome-responsavel">
+                        Nenhum arquivo selecionado
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
 
     <!-- =====================================================DECLARAÇÃO====================================================== -->
 
